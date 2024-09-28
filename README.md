@@ -35,13 +35,13 @@ Before running any of the projects, ensure you have the following installed:
 
 - **Node.js**: Required to run React applications.
 - **npm or yarn**: Package managers to install dependencies.
-- **Git**: To clone the repository.
+
 
 ## How to Clone and Run the Projects
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/react-projects-repo.git
+   git clone https://github.com/Temmarie/React-Curriculum.git
    ```
 
 2. Navigate to the project folder of your choice:
@@ -60,7 +60,7 @@ Before running any of the projects, ensure you have the following installed:
 
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
    or
    ```bash
