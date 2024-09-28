@@ -3,26 +3,26 @@
 This repository contains a collection of React projects ranging from beginner-level to expert-level applications. Each project is designed to help you progressively learn React concepts and improve your skills by building real-world applications.
 
 ## Projects Included:
-### Beginner Projects:
+### Beginner Projects:🔤
 1. **Simple Counter App**: Learn components, state, and event handling.
 2. **Todo List App**: Practice state management, JSX, and list rendering.
 3. **Weather App**: Work with props and component structure.
 4. **Profile Card**: Explore props and basic CSS styling.
 
-### Intermediate Projects:
+### Intermediate Projects:💫
 5. **Quiz App**: Work with state, conditional rendering, and events.
 6. **Expense Tracker**: Learn forms, state, and array methods.
 7. **Simple Weather App (API)**: Use `useEffect` to fetch API data.
 8. **Notes App**: CRUD operations and localStorage integration.
 9. **Movie Search App**: Fetch API data and handle input.
 
-### Advanced Projects:
+### Advanced Projects:💻
 10. **E-Commerce Product Page**: Build a shopping page with dynamic state.
 11. **Blog App**: Implement routing and CRUD operations.
 12. **Chat App (Basic)**: Real-time messaging with static data.
 13. **Portfolio Website**: Design and develop your personal portfolio.
 
-### Expert-Level Projects:
+### Expert-Level Projects:🔥
 14. **Real-Time Chat App with Firebase**: Implement real-time database and authentication.
 15. **E-Commerce Website (Full-Stack)**: Full-featured e-commerce with backend integration.
 16. **Project Management Dashboard**: Advanced state management and API integration.
