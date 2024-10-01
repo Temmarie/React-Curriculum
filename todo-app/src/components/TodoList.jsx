@@ -2,7 +2,7 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos, toggleComplete, removeTodo }) => {
+const TodoList = ({ todos, toggleComplete, removeTodo, updateTodo  }) => {
   return (
     <div className="mt-6">
       {todos.map((todo, index) => (
@@ -12,6 +12,7 @@ const TodoList = ({ todos, toggleComplete, removeTodo }) => {
           index={index}
           toggleComplete={toggleComplete}
           removeTodo={removeTodo}
+          updateTodo={updateTodo} // Pass down updateTodo prop
         />
       ))}
     </div>

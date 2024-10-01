@@ -26,6 +26,13 @@ const App = () => {
     setTodos(newTodos);
   };
 
+  const updateTodo = (index, newText) => {
+    const newTodos = [...todos];
+    newTodos[index].text = newText;
+    setTodos(newTodos);
+  };
+
+
   return (
     <div className="min-h-screen bg-indigo-50">
       <Header />
@@ -35,6 +42,7 @@ const App = () => {
           todos={todos}
           toggleComplete={toggleComplete}
           removeTodo={removeTodo}
+          updateTodo={updateTodo} 
         />
       </div>
     </div>
