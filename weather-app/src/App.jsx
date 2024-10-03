@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import WeatherCard from './components/WeatherCard';
 import HourlyForecast from './components/HourlyForecast';
 import DailyForecast from './components/DailyForecast';
-import backgroundImage from '../src/assets/images/bg-3.jpg'; // Adjust the path as necessary
+import backgroundImage from '../src/assets/images/bg-1.jpg'; // Adjust the path as necessary
+
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -97,10 +98,17 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div
+  className="min-h-screen bg-gray-800 text-white"
+  style={{
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
       <Navbar onSearch={fetchWeatherData} onGetWeather={fetchWeatherDataByCoords} />
       <div className="container mx-auto">
-        {error && <p className="text-red-500 text-center">{error}</p>} {/* Display error message */}
+        {error && <p className="text-pink-500 text-center">{error}</p>} {/* Display error message */}
         <WeatherCard weatherData={weatherData} weatherImage={weatherImage} />
         <HourlyForecast hourlyData={forecastData?.hourly} />
         <DailyForecast dailyData={forecastData?.daily} />

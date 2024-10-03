@@ -18,7 +18,7 @@ const Navbar = ({ onSearch, onGetWeather }) => {
 
   return (
    
-<nav className="flex justify-between items-center p-4 bg-gradient-to-r from-indigo-800 via-purple-700 to-blue-900 text-white">
+<nav className="flex justify-between items-center p-4 bg-transparent text-white">
   <a href="/" className="text-3xl font-bold"> Weather App</a>
   <form onSubmit={handleSearch} className="flex items-center">
   <input
