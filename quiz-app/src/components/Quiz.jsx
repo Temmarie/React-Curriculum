@@ -1,56 +1,49 @@
-// src/components/Quiz.jsx
 import React, { useState } from 'react';
 
-// Quiz component which takes 'questions' and 'handleQuizCompletion' as props
-const Quiz = ({ questions, handleQuizCompletion }) => {
-      // State to keep track of the current question index, initialized to 0
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-     // State to keep track of the user's score, initialized to 0
-    const [score, setScore] = useState(0);
-       // State to control the visibility of feedback messages, initialized to false
-    const [showFeedback, setShowFeedback] = useState(false);
-        // State to store the feedback message, initialized to an empty string
-    const [feedbackMessage, setFeedbackMessage] = useState('');
+const Quiz = ({questions, handleQuizCompletion}) => {
 
-      // Getting the current question based on the current question index
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [score, setScore] = useState(0);
+    const [showFeedback, setShowFeedback] = useState(false);
+    const [feedbackMessage, setFeedbackMessage] = useState('');
     const currentQuestion = questions[currentQuestionIndex];
 
-    // Function to handle the user's answer
+    // function to handle answer
     const handleAnswer = (isCorrect) => {
-          // Show the feedback message
-        setShowFeedback(true);
-        if (isCorrect) {
-            setFeedbackMessage('Correct!');
-            setScore(score + 1);
-        } else {
-            setFeedbackMessage('Wrong!');
-        }
 
-          // Set a timeout to hide the feedback message and move to the next question after 1 second
-          setTimeout(() => {
-            // Hide the feedback message
-            setShowFeedback(false);
-            // If there are more questions left
-            if (currentQuestionIndex < questions.length - 1) {
-                // Move to the next question
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
-            } else {
-                // If no more questions are left, call the handleQuizCompletion function with the final score
+      setShowFeedback(true);
+      if (isCorrect) {
+          setFeedbackMessage('Correct!');
+          setScore(score + 1);
+      } else {
+          setFeedbackMessage('Wrong!');
+      }
+
+        // Set a timeout to hide the feedback message and move to the next question after 1 second
+        setTimeout(() => {
+
+          setShowFeedback(false);
+          if (currentQuestionIndex < questions.length - 1) {
+              setCurrentQuestionIndex(currentQuestionIndex + 1);
+          } else {
                 handleQuizCompletion(score);
-            }
-        }, 1000); // Delay of 1000 milliseconds (1 second)
-    };
+          }
+      }, 1000); // Delay of 1000 milliseconds (1 second)
+  };
+
+     // Calculate the progress percentage
+    const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
 
     return (
-        <div className="bg-gray-900 text-white p-4">
+        <div className=" bg-white p-4">
               {/* Displays the current question */}
-            <h2 className="text-xl mb-4">{currentQuestion.question}</h2>
+            <h2 className="text-xl mb-4 text-black">  {currentQuestionIndex + 1}. {currentQuestion.question} </h2>
             <div className="flex flex-col space-y-4">
                     {/* Maps over the answers array and creates a button for each answer */}
                 {currentQuestion.answers.map((answer, index) => (
                     <button
                         key={index}
-                        className="bg-indigo-500 px-4 py-2 rounded-lg"
+                        className="bg-indigo-500 text-white px-4 py-2 rounded-lg"
                         onClick={() => handleAnswer(answer.isCorrect)}
                     >
                         {answer.text} {/**Displays answer */}
@@ -62,8 +55,13 @@ const Quiz = ({ questions, handleQuizCompletion }) => {
                 {showFeedback && <p>{feedbackMessage}</p>}
             </div>
 
-            <p className="mt-4">Question {currentQuestionIndex + 1} of {questions.length}</p>
-        </div>
+            {/* Progress bar container */}
+            <div className="w-full bg-indigo-50 rounded-full h-4 mt-4 relative">
+                <div className="bg-indigo-500 h-4 rounded-full text-white flex items-center justify-center" style={{ width: `${progressPercentage}%` }}>
+                    <p className="text-center w-full">{currentQuestionIndex + 1} / {questions.length}</p>
+                </div>
+            </div> 
+    </div>
     );
 };
 

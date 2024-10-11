@@ -17,7 +17,7 @@ function App() {
 
 
   return (
-    <div className="text-center p-5 bg-indigo-700">
+    <div className="text-center p-5 bg-indigo-700 min-h-screen m-auto">
       <h1 className="text-2xl font-bold text-white">Simple React Counter App</h1>
 
       <h2 className='text-xl text-white mb-3'>{count}</h2>
