@@ -1,0 +1,10 @@
+/* counter-app/src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+p {
+    color: #05D3A2;
+    color: antiquewhite;
+}
